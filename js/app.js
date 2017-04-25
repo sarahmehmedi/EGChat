@@ -1,7 +1,7 @@
 $(document).ready(function() {
   //var json = { 1: {age: "21", name: "arjun",gender: "male"}, 2: {age: "30",name: "ravi",gender: "male"}, 3: {age: "57", name: "pushpa", gender: "female"}};
   var myJSON;
-  $.getJSON('http://fc.greencams.net:8080/egapi/v1/arenainfo', function(json) {
+  $.getJSON("http://fc.greencams.net:8080/egapi/v1/arenainfo", function(json) {
     myJSON = json;
     console.log(myJSON);
   //var data = JSON.parse(myJSON);
