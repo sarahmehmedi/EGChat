@@ -29,11 +29,14 @@ $(document).ready(function() {
   for(var j = 0; j<data.chats.length; j++){
     var count = data.chats[j];
     if(count.type == 'MessageType.Broadcast'){
+      arenaMessageList.style.color = "green";
       arenaMessageList.innerHTML = arenaMessageList.innerHTML + count.message + "<br>";
     } else if (count.type == 'MessageType.Public') {
-      publicMessageList.innerHTML = publicMessageList.innerHTML + count.name + ":" + count.message + "<br>";
+      arenaMessageList.style.color = "blue";
+      arenaMessageList.innerHTML = arenaMessageList.innerHTML + count.name + ":" + count.message + "<br>";
     } else if (count.type == 'MessageType.Team'){
-      teamMessageList.innerHTML = teamMessageList.innerHTML + count.name + ":" + count.message + "<br>";
+      arenaMessageList.style.color = "gold";
+      arenaMessageList.innerHTML = arenaMessageList.innerHTML + count.name + ":" + count.message + "<br>";
     }
   }
   console.log(count.type + ":" + count.name + ":" + count.message);
