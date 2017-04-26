@@ -12,21 +12,22 @@
     -webkit-flex: 1 100%;
     flex: 1 100%;
 }
-.chat {
+.chats {
   text-align: left;
 }
-#arenaMessage {
+.chat{
+  background-color: black;
+}
+
+p {
+    margin: 0;
+    padding: 5;
+}
+
+#chatText {
     text-align: left;
-    color:green;
 }
-#publicMessage {
-  text-align: left;
-  color:blue;
-}
-#teamMessage {
-  text-align: left;
-  color:gold;
-}
+
 
 header {background: black;color:white;}
 footer {background: black;color:white;}
@@ -36,10 +37,15 @@ footer {background: black;color:white;}
     list-style-type: none;
     padding: 0;
 }
-.nav ul a {
-    text-decoration: none;
+.nav ul li{
+    list-style-type: none;
+    padding: 0;
     color:gold;
 }
+.nav ul a {
+    text-decoration: none;
+}
+
 
 @media all and (min-width: 768px) {
     .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}

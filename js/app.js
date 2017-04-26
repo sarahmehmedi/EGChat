@@ -1,10 +1,8 @@
 $(document).ready(function() {
-  //var json = { 1: {age: "21", name: "arjun",gender: "male"}, 2: {age: "30",name: "ravi",gender: "male"}, 3: {age: "57", name: "pushpa", gender: "female"}};
   var myJSON;
   $.getJSON("http://fc.greencams.net:8080/egapi/v1/arenainfo", function(json) {
     myJSON = json;
     console.log(myJSON);
-  //var data = JSON.parse(myJSON);
 
   var data = myJSON;
   document.getElementById("arenaName").innerHTML = "EG Chat, Current Arena: " + data.name;
@@ -23,20 +21,18 @@ $(document).ready(function() {
     }
   }
 //used for displaying chat
-  arenaMessageList = document.getElementById("arenaMessage");
-  publicMessageList = document.getElementById("publicMessage");
-  teamMessageList = document.getElementById("teamMessage");
+  chatTextList = document.getElementById("chatText");
+
   for(var j = 0; j<data.chats.length; j++){
     var count = data.chats[j];
     if(count.type == 'MessageType.Broadcast'){
-      arenaMessageList.style.color = "green";
-      arenaMessageList.innerHTML = arenaMessageList.innerHTML + count.message + "<br>";
+      chatTextList.innerHTML = chatTextList.innerHTML + "<p style='color:green';>" + count.message;
+
     } else if (count.type == 'MessageType.Public') {
-      arenaMessageList.style.color = "blue";
-      arenaMessageList.innerHTML = arenaMessageList.innerHTML + count.name + ":" + count.message + "<br>";
+      chatTextList.innerHTML = chatTextList.innerHTML + "<p style='color:#4a6ae0';>" + count.name + ": " + count.message;
+
     } else if (count.type == 'MessageType.Team'){
-      arenaMessageList.style.color = "gold";
-      arenaMessageList.innerHTML = arenaMessageList.innerHTML + count.name + ":" + count.message + "<br>";
+      chatTextList.innerHTML = chatTextList.innerHTML + "<p style='color:gold';>" + count.name + ": " + count.message;
     }
   }
   console.log(count.type + ":" + count.name + ":" + count.message);
