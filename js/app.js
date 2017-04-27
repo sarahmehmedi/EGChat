@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var myJSON;
-  $.getJSON("http://fc.greencams.net:8080/egapi/v1/arenainfo", function(json) {
+  $.getJSON("https://fc.greencams.net:8080/egapi/v1/arenainfo", function(json) {
     myJSON = json;
     console.log(myJSON);
 
